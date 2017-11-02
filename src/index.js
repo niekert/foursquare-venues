@@ -10,7 +10,7 @@ const render = AppComponent => {
     <ReactHotLoaderContainer>
       <AppComponent />
     </ReactHotLoaderContainer>,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
 };
 
