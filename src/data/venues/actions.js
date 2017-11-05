@@ -2,6 +2,7 @@ import { fetchVenues } from 'api/venues';
 
 export const FETCH_VENUES_BY_GEO = 'FETCH_VENUES_BY_GEO';
 export const SELECT_VENUE = 'SELECT_VENUE';
+export const CLOSE_SELECTED_VENUE = 'CLOSE_SELECTED_VENUE';
 export const FETCH_VENUES_BY_SEARCH = 'FETCH_VENUES_BY_SEARCH';
 export const FETCH_VENUES_SUCCESS = 'FETCH_VENUES_SUCCESS';
 export const FETCH_VENUES_ERROR = 'FETCH_VENUES_ERROR';
@@ -61,5 +62,11 @@ export function selectVenue(venueId) {
     payload: {
       venueId,
     },
+  };
+}
+
+export function closeSelectedVenue() {
+  return {
+    type: CLOSE_SELECTED_VENUE,
   };
 }

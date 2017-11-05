@@ -91,7 +91,7 @@ class SearchForm extends Component {
           <SearchContainerWrapper>
             <StyledForm onSubmit={this.submitForm}>
               <SearchInput
-                placeholder="Find venues in..."
+                placeholder="Find venues near..."
                 onChange={this.onSearchChange}
                 value={search}
               />

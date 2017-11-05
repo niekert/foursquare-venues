@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { getVenuesList, getMapBounds } from 'data/venues/selectors';
+import { selectVenue, closeSelectedVenue } from 'data/venues/actions';
+import { getVenuesList, getMapBoundsLiteral } from 'data/venues/selectors';
 import Map from './components/Map';
 
 function mapStateToProps(state) {
@@ -8,9 +9,12 @@ function mapStateToProps(state) {
   return {
     isLoading: venues.isLoading,
     currentLocationLatLng: venues.currentGeoLatLng,
-    mapBounds: getMapBounds(venues),
+    selectedVenueId: venues.selectedVenueId,
+    mapBounds: getMapBoundsLiteral(venues),
     venues: getVenuesList(venues),
   };
 }
 
-export default connect(mapStateToProps)(Map);
+export default connect(mapStateToProps, { selectVenue, closeSelectedVenue })(
+  Map,
+);

@@ -7,14 +7,17 @@ const ContainerElement = styled.div`
   height: 100vh;
 `;
 
-function FullScreenMap(props) {
-  return (
-    <GoogleMap
-      containerElement={<ContainerElement />}
-      mapElement={<div style={{ height: '100%' }} />}
-      {...props}
-    />
-  );
+// eslint-disable-next-line react/prefer-stateless-function
+class FullScreenMap extends React.Component {
+  render() {
+    return (
+      <GoogleMap
+        containerElement={<ContainerElement />}
+        mapElement={<div style={{ height: '100%' }} />}
+        {...this.props}
+      />
+    );
+  }
 }
 
 export default FullScreenMap;

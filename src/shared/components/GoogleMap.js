@@ -1,3 +1,5 @@
+import React from 'react';
+import { func } from 'prop-types';
 import { withGoogleMap, withScriptjs, GoogleMap } from 'react-google-maps';
 import { compose, withProps } from 'recompose';
 
@@ -12,4 +14,16 @@ const enhance = compose(
   withGoogleMap,
 );
 
-export default enhance(GoogleMap);
+const WrappedGoogleMap = ({ onMapMounted, ...props }) => (
+  <GoogleMap ref={onMapMounted} {...props} />
+);
+
+WrappedGoogleMap.propTypes = {
+  onMapMounted: func,
+};
+
+WrappedGoogleMap.defaultProps = {
+  onMapMounted: undefined,
+};
+
+export default enhance(WrappedGoogleMap);

@@ -1,8 +1,15 @@
 import React from 'react';
 import { func } from 'prop-types';
+import { withHandlers } from 'recompose';
 import { venue as venueProptype } from 'customPropTypes';
 import { Wrapper, Thumbnail, Details, Title, Subtitle, Rating } from './style';
 import { getThumbnailUrl, getCategory } from '../../selectors';
+
+const enhance = withHandlers({
+  onClick: ({ venue, selectVenue }) => () => {
+    selectVenue(venue.referralId);
+  },
+});
 
 function VenueCard({ venue: venueDetails, onClick }) {
   const { venue } = venueDetails;
@@ -26,4 +33,4 @@ VenueCard.propTypes = {
   onClick: func.isRequired,
 };
 
-export default VenueCard;
+export default enhance(VenueCard);
