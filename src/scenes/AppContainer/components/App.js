@@ -1,11 +1,12 @@
 import React from 'react';
 import { ContentWrapper } from 'style/Layout';
-import SearchForm from './SearchForm';
+import SearchVenues from 'scenes/SearchVenues';
 import Map from './Map';
 
-const App = () => (
+// FIXME: I have to document the propTypes properly here
+const App = props => (
   <ContentWrapper>
-    <SearchForm />
+    <SearchVenues {...props} />
     <Map />
   </ContentWrapper>
 );

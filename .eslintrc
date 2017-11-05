@@ -22,7 +22,8 @@
     "no-debugger": "off",
     "no-unused-vars": "warn",
     "react/no-unused-prop-types": "warn",
-    "react/require-default-props": "warn"
+    "react/require-default-props": "warn",
+    "react/no-typos": "off"
   },
   "settings": {
     "import/resolver": {
