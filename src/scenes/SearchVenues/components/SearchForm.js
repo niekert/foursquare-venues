@@ -11,7 +11,8 @@ import UseLocationButton from './UseLocationButton';
 const Wrapper = styled.div`
   position: absolute;
   z-index: 10;
-  min-width: 350px;
+  width: auto;
+  max-width: 100%;
   padding: 0 ${prop('theme.spacing.1')};
   left: 0;
   right: 0;
@@ -19,6 +20,7 @@ const Wrapper = styled.div`
 
   ${smallUp`
     left: ${prop('theme.spacing.2')};
+    width: 350px;
     right: initial;
     padding: 0;
   `};

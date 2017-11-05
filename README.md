@@ -6,7 +6,7 @@ Please note that https is required for the current user's location to work
 See the section below to run the app locally
 
 ## About this app
-Foursquare venues is a small demo app to browse venues nearby a given location or search query.
+Foursquare venues is a small demo app to browse foursquare venues nearby a given location or search query.
 It uses the foursquare venues API achieve this. Currently the app supports
 
 - Listing venues from a search result
@@ -35,7 +35,7 @@ REACT_APP_GOOGLE_MAPS_API_KEY=<Your google maps API key></Your>
 Obviously this app is not in a production ready state. I've decided to drop some things because it would take a lot of time implementing all of this, here's a list of those things:
 
 - Mobile design when opening the details of a venue is messed up
-- There is no proper error handling for API requests, and the app doesn't show an error, the actions are implemented though.
-- UI for the details of a venue are very poor. I only implemented the details view to better demonstrate the "scenes" folder architecture
-- Not everything is tested. I've tested some various aspects of the app (actions, reducers, containers and components) to demonstrate how those things
+- There is no proper error handling for API requests and the app doesn't show an error when it happend, the actions are implemented though.
+- UI for the details of a venue are very poor. I only implemented the details view to better demonstrate the "scenes" folder architecture and the architecture of how state flows in a redux app like this.
+- Not everything is tested. I've tested some various aspects of the app (actions, reducers, containers and components) to demonstrate how they can be tested, getting more test coverage would only be more time consuming
 

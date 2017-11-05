@@ -4,7 +4,7 @@ import GoogleMap from './GoogleMap';
 
 const ContainerElement = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 `;
 
 // eslint-disable-next-line react/prefer-stateless-function
