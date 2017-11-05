@@ -1,6 +1,9 @@
 ## See the app in action
 https://foursquare-venues.surge.sh/
+
 Please note that https is required for the current user's location to work
+
+See the section below to run the app locally
 
 ## About this app
 Foursquare venues is a small demo app to browse venues nearby a given location or search query.
