@@ -19,7 +19,10 @@ function VenueMarker({
       onClick={onClick}
     >
       {isDetailsOpen && (
-        <InfoBox onCloseClick={closeDetails}>
+        <InfoBox
+          onCloseClick={closeDetails}
+          options={{ enableEventPropagation: true }}
+        >
           <VenueDetails />
         </InfoBox>
       )}
