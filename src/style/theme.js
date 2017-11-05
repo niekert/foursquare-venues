@@ -10,6 +10,7 @@ export default {
   },
   color: {
     main: '#333',
+    sub: '#444',
   },
   spacing: {
     0: `${computeGoldenRatio(0)}px`,

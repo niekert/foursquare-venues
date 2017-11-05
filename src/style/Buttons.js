@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { prop } from 'styled-tools';
 
 export const IconButton = styled.button`
-  padding: 0 ${prop('theme.spacing.0')};
+  padding: 0;
   background: none;
   cursor: pointer;
   border: none;

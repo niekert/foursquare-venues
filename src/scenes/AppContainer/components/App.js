@@ -1,12 +1,11 @@
 import React from 'react';
 import { ContentWrapper } from 'style/Layout';
 import SearchVenues from 'scenes/SearchVenues';
-import Map from './Map';
+import Map from 'scenes/Map';
 
-// FIXME: I have to document the propTypes properly here
-const App = props => (
+const App = () => (
   <ContentWrapper>
-    <SearchVenues {...props} />
+    <SearchVenues />
     <Map />
   </ContentWrapper>
 );

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { bool, func } from 'prop-types';
+import { func } from 'prop-types';
 import { NormalCard } from 'style/Cards';
+import { smallUp } from 'style/breakpoints';
+import VenuesList from 'scenes/VenuesList';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
 import UseLocationButton from './UseLocationButton';
@@ -9,13 +11,26 @@ const Wrapper = styled.div`
   position: absolute;
   z-index: 10;
   min-width: 350px;
-  left: ${prop('theme.spacing.2')};
+  padding: 0 ${prop('theme.spacing.1')};
+  left: 0;
+  right: 0;
   top: ${prop('theme.spacing.2')};
+
+  ${smallUp`
+    left: ${prop('theme.spacing.2')};
+    right: initial;
+    padding: 0;
+  `};
 `;
 
-const SearchContainerForm = styled.form`
+const SearchContainerWrapper = styled.div`
   position: relative;
   display: flex;
+  justify-content: space-between;
+`;
+
+const StyledForm = styled.form`
+  flex: 1;
 `;
 
 const SearchInput = styled.input.attrs({
@@ -31,12 +46,12 @@ const SearchInput = styled.input.attrs({
 
 class SearchForm extends Component {
   static propTypes = {
-    getGeoLocation: func.isRequired,
-    isGeoLocationLoading: bool.isRequired,
-    searchNear: func.isRequired,
+    fetchVenuesBySearch: func.isRequired,
+    fetchVenuesByGeoLocation: func.isRequired,
   };
 
   state = {
+    isGeoLocationLoading: false,
     search: '',
   };
 
@@ -46,27 +61,44 @@ class SearchForm extends Component {
     });
   };
 
+  getGeoLocation = e => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    this.setState({ isGeoLocationLoading: true });
+
+    navigator.geolocation.getCurrentPosition(position => {
+      this.setState({
+        isGeoLocationLoading: false,
+      });
+
+      this.props.fetchVenuesByGeoLocation(position);
+    });
+  };
+
   submitForm = e => {
     e.preventDefault();
 
-    this.props.searchNear(this.state.search);
+    this.props.fetchVenuesBySearch(this.state.search);
   };
 
   render() {
-    const { search } = this.state;
-    const { getGeoLocation } = this.props;
+    const { search, isGeoLocationLoading } = this.state;
 
     return (
       <Wrapper>
         <NormalCard>
-          <SearchContainerForm onSubmit={this.submitForm}>
-            <SearchInput
-              placeholder="Find venues in..."
-              onChange={this.onSearchChange}
-              value={search}
-            />
-            <UseLocationButton onClick={getGeoLocation} />
-          </SearchContainerForm>
+          <SearchContainerWrapper>
+            <StyledForm onSubmit={this.submitForm}>
+              <SearchInput
+                placeholder="Find venues in..."
+                onChange={this.onSearchChange}
+                value={search}
+              />
+            </StyledForm>
+            <UseLocationButton onClick={this.getGeoLocation} />
+          </SearchContainerWrapper>
+          <VenuesList />
         </NormalCard>
       </Wrapper>
     );
