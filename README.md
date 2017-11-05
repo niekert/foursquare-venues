@@ -34,8 +34,8 @@ REACT_APP_GOOGLE_MAPS_API_KEY=<Your google maps API key></Your>
 ## What's not finished
 Obviously this app is not in a production ready state. I've decided to drop some things because it would take a lot of time implementing all of this, here's a list of those things:
 
-- Mobile design when opening the details of a venue is messed up
+- Details of a venue don't show up on mobile
 - There is no proper error handling for API requests and the app doesn't show an error when it happend, the actions are implemented though.
-- UI for the details of a venue are very poor. I only implemented the details view to better demonstrate the "scenes" folder architecture and the architecture of how state flows in a redux app like this.
-- Not everything is tested. I've tested some various aspects of the app (actions, reducers, containers and components) to demonstrate how they can be tested, getting more test coverage would only be more time consuming
+- UI for the details of a venue are poor. I implemented the details view to better demonstrate the "scenes" folder architecture and the architecture of how state flows in a redux app like this.
+- Not everything is tested. I've tested some aspects of the app (actions, reducers, containers and components) to demonstrate how they can be tested, getting more test coverage would only be more time consuming
 
