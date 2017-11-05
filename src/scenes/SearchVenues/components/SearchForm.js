@@ -96,7 +96,10 @@ class SearchForm extends Component {
                 value={search}
               />
             </StyledForm>
-            <UseLocationButton onClick={this.getGeoLocation} />
+            <UseLocationButton
+              isLoading={isGeoLocationLoading}
+              onClick={this.getGeoLocation}
+            />
           </SearchContainerWrapper>
           <VenuesList />
         </NormalCard>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { arrayOf, func } from 'prop-types';
 import { venue as venuesPropType } from 'customPropTypes';
+import { getVenueId } from 'data/venues/selectors';
 import { smallUp } from 'style/breakpoints';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
@@ -21,7 +22,7 @@ function VenuesList({ venues, selectVenue }) {
     <Wrapper>
       {venues.map(venue => (
         <VenueCard
-          key={venue.referralId}
+          key={getVenueId(venue)}
           venue={venue}
           selectVenue={selectVenue}
         />

@@ -3,7 +3,7 @@ import { Marker } from 'react-google-maps';
 import { func, bool } from 'prop-types';
 import { venue as venuePropType } from 'customPropTypes';
 import { InfoBox } from 'react-google-maps/lib/components/addons/InfoBox';
-import VenueDetails from './VenueDetails';
+import VenueDetails from 'scenes/VenueDetails';
 
 function VenueMarker({
   venue: venueDetails,
@@ -20,7 +20,7 @@ function VenueMarker({
     >
       {isDetailsOpen && (
         <InfoBox onCloseClick={closeDetails}>
-          <VenueDetails venue={venueDetails} />
+          <VenueDetails />
         </InfoBox>
       )}
     </Marker>

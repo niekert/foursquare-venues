@@ -1,13 +1,16 @@
 import React from 'react';
 import { func } from 'prop-types';
 import { withHandlers } from 'recompose';
+import { getVenueId } from 'data/venues/selectors';
 import { venue as venueProptype } from 'customPropTypes';
-import { Wrapper, Thumbnail, Details, Title, Subtitle, Rating } from './style';
+import { Rating } from 'style/Venue';
+import { Wrapper, Thumbnail, Details, Title, Subtitle } from './style';
 import { getThumbnailUrl, getCategory } from '../../selectors';
 
 const enhance = withHandlers({
   onClick: ({ venue, selectVenue }) => () => {
-    selectVenue(venue.referralId);
+    const venueId = getVenueId(venue);
+    selectVenue(venueId);
   },
 });
 

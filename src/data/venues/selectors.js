@@ -12,7 +12,7 @@ export function getVenuesList(venuesState) {
  * @param {*} venuesState
  */
 export function getMapBoundsLiteral(venuesState) {
-  if (!venuesState.venues) {
+  if (!venuesState.venues || !venuesState.venues.suggestedBounds) {
     return null;
   }
 
@@ -23,4 +23,8 @@ export function getMapBoundsLiteral(venuesState) {
     south: sw.lat,
     west: sw.lng,
   };
+}
+
+export function getVenueId(venueDetails) {
+  return venueDetails.venue.id;
 }

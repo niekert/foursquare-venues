@@ -45,14 +45,3 @@ export const Subtitle = styled.span`
   font-weight: 300;
   color: ${prop('theme.color.sub')};
 `;
-
-export const Rating = styled.span`
-  align-self: center;
-  border-radius: 3px;
-  color: #fff;
-  font-weight: 300;
-  width: 50px;
-  text-align: center;
-  background-color: #${prop('background')};
-  flex-shrink: 0;
-`;

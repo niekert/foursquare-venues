@@ -39,8 +39,11 @@ export default createReducer(defaultState, {
     };
   },
   [FETCH_VENUES_ERROR](state, action) {
-    console.error('fetch venues error', action);
-    return state;
+    return {
+      ...state,
+      isLoading: false,
+      error: action.payload.error,
+    };
   },
   [SELECT_VENUE](state, action) {
     return {
