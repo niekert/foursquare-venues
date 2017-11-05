@@ -2,7 +2,6 @@ import React from 'react';
 import { arrayOf, func } from 'prop-types';
 import { venue as venuesPropType } from 'customPropTypes';
 import { getVenueId } from 'data/venues/selectors';
-import { smallUp } from 'style/breakpoints';
 import styled from 'styled-components';
 import { prop } from 'styled-tools';
 import VenueCard from './VenueCard';
@@ -10,11 +9,7 @@ import VenueCard from './VenueCard';
 const Wrapper = styled.div`
   margin-top: ${prop('theme.spacing.1')};
   overflow: auto;
-  max-height: 40vh;
-
-  ${smallUp`
-    max-height: 80vh;
-  `};
+  max-height: 80vh;
 `;
 
 function VenuesList({ venues, selectVenue }) {
