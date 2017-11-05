@@ -1,5 +1,5 @@
 import Color from 'color';
-import { memoize } from 'lodash-es';
+import { memoize } from 'lodash';
 
 const memoizeResolver = (color, value) => `${color}::${value}`;
 

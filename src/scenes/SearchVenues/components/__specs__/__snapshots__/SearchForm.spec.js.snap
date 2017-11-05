@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm renders correctly 1`] = `
+<SearchForm__Wrapper>
+  <Cards__NormalCard>
+    <SearchForm__SearchContainerWrapper>
+      <SearchForm__StyledForm
+        onSubmit={[Function]}
+      >
+        <SearchForm__SearchInput
+          onChange={[Function]}
+          placeholder="Find venues near..."
+          value=""
+        />
+      </SearchForm__StyledForm>
+      <branch(UseLocationButton)
+        isActive={false}
+        isLoading={false}
+        onClick={[Function]}
+      />
+    </SearchForm__SearchContainerWrapper>
+    <VenuesList />
+  </Cards__NormalCard>
+</SearchForm__Wrapper>
+`;

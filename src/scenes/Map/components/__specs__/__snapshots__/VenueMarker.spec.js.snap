@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VenueMarker /> Renders correctly 1`] = `
+<Marker
+  onClick={
+    Object {
+      "calls": Array [],
+      "name": "jest.fn()",
+    }
+  }
+  position={
+    Object {
+      "lat": 52,
+      "lng": 53,
+    }
+  }
+/>
+`;
+
+exports[`<VenueMarker /> renders correctly when open 1`] = `
+<Marker
+  onClick={
+    Object {
+      "calls": Array [],
+      "name": "jest.fn()",
+    }
+  }
+  position={
+    Object {
+      "lat": 52,
+      "lng": 53,
+    }
+  }
+>
+  <InfoBox>
+    <Connect(VenueDetailsScene) />
+  </InfoBox>
+</Marker>
+`;

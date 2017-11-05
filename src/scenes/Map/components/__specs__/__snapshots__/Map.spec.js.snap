@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Map /> renders correctly 1`] = `
+<FullScreenMap
+  defaultCenter={
+    Object {
+      "lat": 52.3702,
+      "lng": 4.8952,
+    }
+  }
+  defaultZoom={12}
+  loadingElement={<Loading />}
+  onMapMounted={[Function]}
+  zoom={16}
+>
+  <MapMarkers__MyLocationMarker
+    position={
+      Object {
+        "lat": 52,
+        "lng": 53,
+      }
+    }
+  />
+  <VenueMarker
+    isDetailsOpen={false}
+    key="venue-marker-mock-venue-id"
+    onClick={[Function]}
+    venue="fake-venue-1"
+  />
+  <VenueMarker
+    isDetailsOpen={false}
+    key="venue-marker-mock-venue-id"
+    onClick={[Function]}
+    venue="fake-venue-2"
+  />
+  <VenueMarker
+    isDetailsOpen={false}
+    key="venue-marker-mock-venue-id"
+    onClick={[Function]}
+    venue="fake-venue-3"
+  />
+  <VenueMarker
+    isDetailsOpen={false}
+    key="venue-marker-mock-venue-id"
+    onClick={[Function]}
+    venue="mock-venue-id"
+  />
+</FullScreenMap>
+`;

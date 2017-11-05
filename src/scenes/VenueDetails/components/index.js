@@ -15,7 +15,7 @@ function VenueDetails({ isLoading, photoUrls, rating, ratingColor, name }) {
             <Title>{name}</Title>
             {!!rating && <Rating background={ratingColor}>{rating}</Rating>}
           </TitleWrapper>
-          {photoUrls.length && <VenuePhotos photoUrls={photoUrls} />}
+          {photoUrls.length > 0 && <VenuePhotos photoUrls={photoUrls} />}
         </Content>
       )}
     </Wrapper>

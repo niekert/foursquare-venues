@@ -1,4 +1,5 @@
 import React from 'react';
+import 'babel-polyfill';
 import ReactDOM from 'react-dom';
 import { AppContainer as ReactHotLoaderContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';

@@ -10,6 +10,19 @@
       }
     ]
   ],
+  "env": {
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "react-hot-loader/patch",
+        "transform-react-jsx",
+        "transform-object-rest-spread",
+        "syntax-optional-chaining",
+        "babel-plugin-transform-class-properties",
+        "babel-plugin-styled-components"
+      ]
+    }
+  },
   "plugins": [
     "react-hot-loader/patch",
     "transform-react-jsx",

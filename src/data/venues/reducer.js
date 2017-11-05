@@ -1,4 +1,5 @@
 import { createReducer } from 'redux-create-reducer';
+import { SEARCH_TYPE_CURRENT_GEO, SEARCH_TYPE_QUERY } from 'app-constants';
 import {
   FETCH_VENUES_BY_GEO,
   FETCH_VENUES_BY_SEARCH,
@@ -22,6 +23,7 @@ export default createReducer(defaultState, {
       ...state,
       isLoading: true,
       currentGeoLatLng: action.payload.latLng,
+      searchType: SEARCH_TYPE_CURRENT_GEO,
     };
   },
   [FETCH_VENUES_BY_SEARCH](state, action) {
@@ -29,6 +31,7 @@ export default createReducer(defaultState, {
       ...state,
       query: action.payload.query,
       isLoading: true,
+      searchType: SEARCH_TYPE_QUERY,
     };
   },
   [FETCH_VENUES_SUCCESS](state, action) {

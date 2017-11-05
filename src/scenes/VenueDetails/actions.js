@@ -11,11 +11,17 @@ export function fetchVenueDetails(venueId) {
       payload: { venueId },
     });
 
-    const venueDetails = await fetchVenueDetailsFromApi(venueId);
-
-    dispatch({
-      type: FETCH_VENUE_DETAILS_SUCCESS,
-      payload: { venueId, venueDetails },
-    });
+    try {
+      const venueDetails = await fetchVenueDetailsFromApi(venueId);
+      dispatch({
+        type: FETCH_VENUE_DETAILS_SUCCESS,
+        payload: { venueId, venueDetails },
+      });
+    } catch (error) {
+      dispatch({
+        type: FETCH_VENUE_DETAILS_ERROR,
+        payload: { error, venueId },
+      });
+    }
   };
 }

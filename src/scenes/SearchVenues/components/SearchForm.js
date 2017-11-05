@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { func } from 'prop-types';
+import { func, oneOf } from 'prop-types';
 import { NormalCard } from 'style/Cards';
 import { smallUp } from 'style/breakpoints';
 import VenuesList from 'scenes/VenuesList';
 import styled from 'styled-components';
+import { SEARCH_TYPE_QUERY, SEARCH_TYPE_CURRENT_GEO } from 'app-constants';
 import { prop } from 'styled-tools';
 import UseLocationButton from './UseLocationButton';
 
@@ -48,6 +49,11 @@ class SearchForm extends Component {
   static propTypes = {
     fetchVenuesBySearch: func.isRequired,
     fetchVenuesByGeoLocation: func.isRequired,
+    activeSearchType: oneOf([SEARCH_TYPE_QUERY, SEARCH_TYPE_CURRENT_GEO]),
+  };
+
+  static defaultProps = {
+    activeSearchType: null,
   };
 
   state = {
@@ -83,6 +89,7 @@ class SearchForm extends Component {
   };
 
   render() {
+    const { activeSearchType } = this.props;
     const { search, isGeoLocationLoading } = this.state;
 
     return (
@@ -98,6 +105,7 @@ class SearchForm extends Component {
             </StyledForm>
             <UseLocationButton
               isLoading={isGeoLocationLoading}
+              isActive={activeSearchType === SEARCH_TYPE_CURRENT_GEO}
               onClick={this.getGeoLocation}
             />
           </SearchContainerWrapper>

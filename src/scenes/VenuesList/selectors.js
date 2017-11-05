@@ -1,4 +1,4 @@
-import { get } from 'lodash-es';
+import { get } from 'lodash';
 
 export const getThumbnailUrl = (venue, size = '50x50') => {
   const thumbnailDetails = get(venue, 'photos.groups[0].items[0]');

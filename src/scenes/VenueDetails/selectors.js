@@ -1,4 +1,4 @@
-import { get, take } from 'lodash-es';
+import { get, take } from 'lodash';
 /**
  * Get the urls of the photo of a venue in a given size
  * @param {*} venue the venue to get photos of

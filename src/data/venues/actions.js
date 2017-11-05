@@ -1,4 +1,5 @@
 import { fetchVenues } from 'api/venues';
+import 'babel-polyfill';
 
 export const FETCH_VENUES_BY_GEO = 'FETCH_VENUES_BY_GEO';
 export const SELECT_VENUE = 'SELECT_VENUE';

@@ -9,6 +9,7 @@ export default {
     card: '#FFFFFF',
   },
   color: {
+    active: '#4688F1',
     main: '#333',
     sub: '#444',
   },

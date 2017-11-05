@@ -5,6 +5,14 @@ import {
 } from 'data/venues/actions';
 import SearchForm from './components/SearchForm';
 
-export default connect(null, { fetchVenuesByGeoLocation, fetchVenuesBySearch })(
-  SearchForm,
-);
+function mapStateToProps(state) {
+  const { venues } = state.data;
+  return {
+    activeSearchType: venues.searchType,
+  };
+}
+
+export default connect(mapStateToProps, {
+  fetchVenuesByGeoLocation,
+  fetchVenuesBySearch,
+})(SearchForm);

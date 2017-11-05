@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`venuesReducer FETCH_VENUES_BY_GEO 1`] = `
+Object {
+  "currentGeoLatLng": "mock",
+  "isLoading": true,
+  "mock": "true ",
+  "searchType": "search_current_geo",
+}
+`;
+
+exports[`venuesReducer FETCH_VENUES_BY_SEARCH 1`] = `
+Object {
+  "isLoading": true,
+  "query": "mock_query ",
+  "searchType": "search_query",
+}
+`;
+
+exports[`venuesReducer FETCH_VENUES_SUCCESS 1`] = `
+Object {
+  "isLoading": false,
+  "mock_key": "mock",
+  "venues": "mock_venues",
+}
+`;
+
+exports[`venuesReducer SELECT_VENUE 1`] = `
+Object {
+  "mock_key": "do_not_overwrite",
+  "selectedVenueId": "selected_mock_venue",
+}
+`;
